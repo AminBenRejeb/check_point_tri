@@ -1,0 +1,55 @@
+//procedure de tri par insertion
+
+PROCEDURE insert(var tab : ARRAY_OF INTEGER)
+VAR
+    i,j,n,elmt: INTEGER;
+BEGIN
+    
+    FOR i FROM 1 TO n-1  DO
+        
+        elmt= tab[i];
+        j:=i-1;
+
+    WHILE (j>=0 and tab[j]> elmt) DO
+        
+        tab[j+1]= tab[j];
+        j=j-1;
+    
+    END_WHILE
+    
+    tab[j+1]= elmt;
+    
+    END_FOR
+END
+
+
+//l'algorithme principal
+
+ALGORITHM tri_par_insertion
+VAR
+   T : ARRAY_OF Integer[n];
+   i: INTEGER ;
+   
+BEGIN
+    
+    //Affichage avant tri
+
+    FOR i FROM 0 TO n-1  DO
+
+     Read (T[i]);
+
+    END_FOR
+
+    // appel da la procédure
+    
+    insert(var tab : ARRAY_OF INTEGER);
+
+    //Affichage après tri
+
+    FOR i FROM min TO maxn-1   DO
+
+     Read (T[i]);
+       
+    END_FOR
+   
+END
